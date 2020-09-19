@@ -37,6 +37,7 @@ node {
 	      sh "scp -o StrictHostKeyChecking=no target/myweb*.war ec2-user@${tomcatDevIp}:${webApps}myweb.war"
           sh "ssh ec2-user@${tomcatDevIp} ${tomcatStop}"
 		  sh "ssh ec2-user@${tomcatDevIp} ${tomcatStart}"
+		   sh "echo DONE"
        }
    }
    stage('Email Notification'){
